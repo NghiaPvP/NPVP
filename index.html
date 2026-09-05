@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICELAND CITY — Máy chủ Roleplay GTA V trên băng vĩnh cửu</title>
+<meta name="description" content="ICELAND CITY là máy chủ FiveM roleplay lấy cảm hứng từ GTA V, dựng trên một thành phố băng giá nơi luật pháp mỏng như đá tan.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain-overlay" aria-hidden="true"></div>
+<canvas id="snowfall" aria-hidden="true"></canvas>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">
+      <img src="assets/logo.png" alt="ICELAND CITY" class="nav__logo">
+      <span class="nav__brand-text">ICELAND<span class="nav__brand-accent">CITY</span></span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#story">Cốt truyện</a>
+      <a href="#features">Tính năng</a>
+      <a href="#gallery">Hình ảnh</a>
+      <a href="#rules">Quy định</a>
+      <a href="#connect">Kết nối</a>
+    </nav>
+    <a href="#connect" class="btn btn--ghost nav__cta">Vào thành phố</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Mở menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__grid">
+      <div class="hero__copy" data-reveal>
+        <p class="hero__kicker">FiveM Roleplay · Bắc Đại Tây Dương · 62.6° Vĩ Bắc</p>
+        <h1 class="hero__title">
+          <span data-split>Băng chưa từng</span><br>
+          <span class="hero__title-accent text-shimmer">tan cho ai cả.</span>
+        </h1>
+        <p class="hero__lede">
+          Trên một hòn đảo băng ngoài khơi Los Santos, ICELAND CITY dựng nên một
+          đô thị song song — nơi băng đảng, cảnh sát và những kẻ mộng mơ cùng
+          tranh nhau từng centimet đất không đóng băng.
+        </p>
+        <div class="hero__actions">
+          <a href="#connect" class="btn btn--primary">Kết nối máy chủ</a>
+          <a href="#story" class="btn btn--outline">Đọc cốt truyện</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__num" data-count="2847">0</span>
+            <span class="stat__label">công dân đã đăng ký</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="47">0</span>
+            <span class="stat__label">băng đảng hoạt động</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="128">0</span>
+            <span class="stat__label">nghề tùy chỉnh</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__art" data-reveal>
+        <div class="hero__mascot-tilt" id="mascotTilt">
+          <div class="hero__badge-ring">
+            <img src="assets/logo.png" alt="Gấu bắc cực đại diện ICELAND CITY" class="hero__mascot">
+          </div>
+        </div>
+        <svg class="hero__shard hero__shard--a" viewBox="0 0 120 160" aria-hidden="true"><polygon points="60,0 120,50 90,160 20,140 0,40"/></svg>
+        <svg class="hero__shard hero__shard--b" viewBox="0 0 120 160" aria-hidden="true"><polygon points="60,0 120,50 90,160 20,140 0,40"/></svg>
+      </div>
+    </div>
+
+    <div class="ticker" aria-label="Bản tin thành phố">
+      <div class="ticker__track">
+        <span>BĂNG TAN CHẬM: giá xăng ở Cảng Frost Bay tăng 12% sau vụ nổ nhà máy lọc dầu</span>
+        <span>TRUY NÃ: băng đảng Northern Wolves đột nhập kho bạc Ice Vault lúc 3 giờ sáng</span>
+        <span>ĐUA XE: giải Frozen Grand Prix trên hồ đóng băng diễn ra thứ Bảy tuần này</span>
+        <span>THỊ TRƯỜNG: căn hộ khu Glacier Row cháy hàng chỉ trong 6 giờ mở bán</span>
+        <span>CẢNH BÁO: sương mù băng dày đặc làm giảm tầm nhìn trên cao tốc Nr.1</span>
+        <span>BĂNG TAN CHẬM: giá xăng ở Cảng Frost Bay tăng 12% sau vụ nổ nhà máy lọc dầu</span>
+        <span>TRUY NÃ: băng đảng Northern Wolves đột nhập kho bạc Ice Vault lúc 3 giờ sáng</span>
+        <span>ĐUA XE: giải Frozen Grand Prix trên hồ đóng băng diễn ra thứ Bảy tuần này</span>
+        <span>THỊ TRƯỜNG: căn hộ khu Glacier Row cháy hàng chỉ trong 6 giờ mở bán</span>
+        <span>CẢNH BÁO: sương mù băng dày đặc làm giảm tầm nhìn trên cao tốc Nr.1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="story__inner">
+      <div class="story__art" data-reveal>
+        <svg viewBox="0 0 400 460" class="story__skyline" aria-hidden="true">
+          <defs>
+            <linearGradient id="skySunset" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0b1622"/>
+              <stop offset="60%" stop-color="#122335"/>
+              <stop offset="100%" stop-color="#1a3245"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="460" fill="url(#skySunset)"/>
+          <g fill="#0f1e2c">
+            <rect x="10" y="220" width="46" height="240"/>
+            <rect x="64" y="160" width="34" height="300"/>
+            <rect x="106" y="260" width="60" height="200"/>
+            <rect x="176" y="120" width="40" height="340"/>
+            <rect x="224" y="200" width="50" height="260"/>
+            <rect x="282" y="180" width="30" height="280"/>
+            <rect x="320" y="240" width="66" height="220"/>
+          </g>
+          <g class="story__windows" fill="#ffc98a" opacity="0.85">
+            <rect x="20" y="240" width="6" height="6"/><rect x="34" y="260" width="6" height="6"/>
+            <rect x="70" y="180" width="6" height="6"/><rect x="82" y="210" width="6" height="6"/>
+            <rect x="184" y="150" width="6" height="6"/><rect x="196" y="190" width="6" height="6"/>
+            <rect x="230" y="230" width="6" height="6"/><rect x="250" y="260" width="6" height="6"/>
+            <rect x="330" y="270" width="6" height="6"/><rect x="350" y="300" width="6" height="6"/>
+          </g>
+          <path d="M0 460 Q80 420 180 445 T400 430 L400 460 Z" fill="#5fd4f0" opacity="0.18"/>
+        </svg>
+        <div class="story__caption">Đường chân trời Glacier Row, nhìn từ cầu Nyrsta lúc hoàng hôn</div>
+      </div>
+      <div class="story__copy" data-reveal>
+        <p class="section-kicker">Cốt truyện</p>
+        <h2 class="section-title" data-split>Một thành phố mọc lên<br>từ băng vĩnh cửu</h2>
+        <p>
+          Năm 1987, một tập đoàn khai khoáng phát hiện mạch khoáng sản hiếm dưới lớp
+          băng ngoài khơi Los Santos. Thứ họ dựng lên không phải mỏ, mà là một thành
+          phố — <strong>ICELAND CITY</strong> — nửa cảng công nghiệp, nửa sòng bạc,
+          nối với đất liền bằng một cây cầu duy nhất hay đóng băng vào mùa đông.
+        </p>
+        <p>
+          Ba mươi bảy năm sau, tập đoàn đã rút lui nhưng thành phố vẫn ở đó, tự vận
+          hành theo luật riêng của nó. Cảnh sát tuần tra bằng xe trượt tuyết bọc thép.
+          Băng đảng buôn lậu qua các đường hầm dưới lớp băng. Và giữa tất cả, những
+          công dân bình thường vẫn cố sống một cuộc đời không quá lạnh lẽo.
+        </p>
+        <p>Đây là nơi câu chuyện của bạn bắt đầu — không phải với một vai diễn có sẵn, mà với một chỗ trống bạn tự lấp đầy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="features__head" data-reveal>
+      <p class="section-kicker">Vận hành thành phố</p>
+      <h2 class="section-title" data-split>Mọi lớp băng đều che một hệ thống</h2>
+    </div>
+    <div class="bento" data-reveal>
+      <article class="bento__card bento__card--lg">
+        <div class="bento__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 4 4 14v20l20 10 20-10V14L24 4Zm0 6.5L37 17l-13 6.5L11 17l13-6.5ZM8 20.9l14 7v13.6l-14-7V20.9Zm32 0v13.6l-14 7V27.9l14-7Z"/></svg>
+        </div>
+        <h3>Kinh tế không bù đắp ảo</h3>
+        <p>Không có tiền rơi từ trời. Mọi đồng bạn kiếm được đi qua chuỗi cung ứng thật: khai thác, chế biến, buôn bán, thuế — do chính người chơi vận hành và có thể sụp đổ nếu quản lý tệ.</p>
+        <ul class="bento__list">
+          <li>Chuỗi sản xuất liên nghề (khai khoáng → chế biến → bán lẻ)</li>
+          <li>Thị trường chứng khoán mini phản ứng theo sự kiện thành phố</li>
+          <li>Thuế bất động sản tính theo khu vực, không đồng loạt</li>
+        </ul>
+      </article>
+
+      <article class="bento__card">
+        <div class="bento__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M6 30h4l3-9h22l3 9h4v6H6v-6Zm7-13 2-6h18l2 6H13Zm-3 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm28 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+        </div>
+        <h3>128 nghề tùy chỉnh</h3>
+        <p>Từ thợ lặn phá băng, phi công cứu hộ, đến chủ sòng bạc ngầm — mỗi nghề có chuỗi thăng cấp riêng, không phải bản sao dán nhãn khác nhau.</p>
+      </article>
+
+      <article class="bento__card">
+        <div class="bento__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 4C13 4 6 12 6 24s7 20 18 20 18-8 18-20S35 4 24 4Zm0 6c2.8 0 5 5.4 5 12s-2.2 12-5 12-5-5.4-5-12 2.2-12 5-12Z"/></svg>
+        </div>
+        <h3>Xe độ riêng cho khí hậu băng</h3>
+        <p>Gầm cao, xích bánh, lò sưởi cabin nâng cấp — hơn 60 mẫu xe được chỉnh sửa vật lý để chạy được trên tuyết và băng trơn.</p>
+      </article>
+
+      <article class="bento__card">
+        <div class="bento__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 4 8 11v13c0 12 7 19 16 20 9-1 16-8 16-20V11L24 4Zm-3 25-7-7 3-3 4 4 10-10 3 3-13 13Z"/></svg>
+        </div>
+        <h3>Anti-cheat tự viết</h3>
+        <p>Không dùng bản chống hack đóng gói sẵn. Hệ thống được viết riêng, cập nhật theo từng vụ gian lận thực tế bị phát hiện trên máy chủ.</p>
+      </article>
+
+      <article class="bento__card bento__card--wide">
+        <div class="bento__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M10 40V18l14-10 14 10v22h-9V28h-10v12h-9Z"/></svg>
+        </div>
+        <h3>Nhà & bất động sản có thật</h3>
+        <p>Nội thất kéo-thả, cửa sổ nhìn ra vịnh băng thật, và giá nhà dao động theo cung-cầu từng khu — kể cả khi bạn đang ngủ.</p>
+      </article>
+
+      <article class="bento__card">
+        <div class="bento__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 2 4 24l20 22 20-22L24 2Zm0 8 12 14-12 14-12-14 12-14Z"/></svg>
+        </div>
+        <h3>Sự kiện theo mùa</h3>
+        <p>Đua xe trên hồ đóng băng, đấu giá hàng lậu ban đêm, bão tuyết bất ngờ khiến cả thành phố mất điện — lịch trình đổi mỗi tuần.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="gallery__head" data-reveal>
+      <p class="section-kicker">Góc thành phố</p>
+      <h2 class="section-title" data-split>Vài lát cắt của ICELAND CITY</h2>
+    </div>
+    <div class="gallery__track" id="galleryTrack" data-reveal>
+
+      <figure class="gcard">
+        <svg viewBox="0 0 320 220" class="gcard__art"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0b1622"/><stop offset="100%" stop-color="#1c3a52"/></linearGradient></defs>
+          <rect width="320" height="220" fill="url(#g1)"/>
+          <g fill="#0f1e2c"><rect x="20" y="120" width="30" height="100"/><rect x="60" y="90" width="24" height="130"/><rect x="94" y="140" width="40" height="80"/><rect x="150" y="60" width="26" height="160"/><rect x="190" y="110" width="34" height="110"/><rect x="240" y="80" width="22" height="140"/></g>
+          <g fill="#ffc98a" opacity="0.8"><rect x="28" y="140" width="4" height="4"/><rect x="66" y="110" width="4" height="4"/><rect x="102" y="160" width="4" height="4"/><rect x="158" y="90" width="4" height="4"/><rect x="198" y="140" width="4" height="4"/></g>
+          <path d="M0 220 Q120 190 320 205 V220 Z" fill="#5fd4f0" opacity="0.25"/>
+        </svg>
+        <figcaption><span>Cảng Frost Bay</span><small>Khu công nghiệp lạnh, ca đêm</small></figcaption>
+      </figure>
+
+      <figure class="gcard">
+        <svg viewBox="0 0 320 220" class="gcard__art"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#122335"/><stop offset="100%" stop-color="#0b1622"/></linearGradient></defs>
+          <rect width="320" height="220" fill="url(#g2)"/>
+          <circle cx="250" cy="60" r="26" fill="#ffe3ba" opacity="0.85"/>
+          <path d="M0 150 L60 120 L110 160 L170 110 L230 150 L320 130 L320 220 L0 220 Z" fill="#e8f6ff" opacity="0.92"/>
+          <path d="M0 170 L70 145 L130 175 L190 135 L260 165 L320 150 L320 220 L0 220 Z" fill="#cfe9f9"/>
+        </svg>
+        <figcaption><span>Hồ Nyrsta đóng băng</span><small>Đường đua Frozen Grand Prix</small></figcaption>
+      </figure>
+
+      <figure class="gcard">
+        <svg viewBox="0 0 320 220" class="gcard__art"><defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a3245"/><stop offset="100%" stop-color="#0b1622"/></linearGradient></defs>
+          <rect width="320" height="220" fill="url(#g3)"/>
+          <rect x="0" y="150" width="320" height="6" fill="#39536b"/>
+          <g fill="#ff9a3c"><circle cx="60" cy="130" r="3"/><circle cx="140" cy="130" r="3"/><circle cx="220" cy="130" r="3"/><circle cx="280" cy="130" r="3"/></g>
+          <g fill="#0f1e2c"><rect x="30" y="100" width="60" height="30" rx="4"/><rect x="180" y="95" width="70" height="35" rx="4"/></g>
+        </svg>
+        <figcaption><span>Đại lộ Glacier Row</span><small>Khu căn hộ giá cao nhất thành phố</small></figcaption>
+      </figure>
+
+      <figure class="gcard">
+        <svg viewBox="0 0 320 220" class="gcard__art"><defs><radialGradient id="g4" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#2a4a63"/><stop offset="100%" stop-color="#0b1622"/></radialGradient></defs>
+          <rect width="320" height="220" fill="url(#g4)"/>
+          <g stroke="#8fd3ee" stroke-width="1.4" opacity="0.55" fill="none"><path d="M0 40 L320 60"/><path d="M0 80 L320 95"/><path d="M0 130 L320 120"/></g>
+          <polygon points="160,60 200,140 120,140" fill="#12293c"/>
+        </svg>
+        <figcaption><span>Đỉnh Kaldur</span><small>Tuyết lở giả lập theo thời tiết</small></figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section class="rules" id="rules">
+    <div class="rules__inner">
+      <div class="rules__copy" data-reveal>
+        <p class="section-kicker">Trước khi bước qua cầu</p>
+        <h2 class="section-title" data-split>Ba nguyên tắc không thương lượng</h2>
+        <p>Danh sách quy định đầy đủ nằm trong Discord, nhưng ba điều này là nền tảng của mọi thứ khác:</p>
+      </div>
+      <ol class="rules__list" data-reveal>
+        <li>
+          <span class="rules__num">01</span>
+          <div><h3>Nhập vai trên hết</h3><p>Mọi hành động cần có lý do trong câu chuyện. Metagame và powergame bị xử lý ngay, không cảnh cáo lại lần hai.</p></div>
+        </li>
+        <li>
+          <span class="rules__num">02</span>
+          <div><h3>Thua cũng phải diễn cho tới</h3><p>Fail RP — bỏ súng chạy vô lý, hồi máu tức thì để né bắt — làm hỏng trải nghiệm của người khác nhiều hơn bạn nghĩ.</p></div>
+        </li>
+        <li>
+          <span class="rules__num">03</span>
+          <div><h3>Ngoài đời thật, tôn trọng là mặc định</h3><p>Ngoài khung nhập vai, không phân biệt, không quấy rối. Băng có thể lạnh, cộng đồng không cần vậy.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section class="connect" id="connect">
+    <div class="connect__inner" data-reveal>
+      <p class="section-kicker">Sẵn sàng chưa?</p>
+      <h2 class="section-title">Cầu <span class="text-shimmer">Nyrsta</span> đang mở</h2>
+      <p class="connect__lede">Dán lệnh kết nối vào FiveM, chọn một lý do để đến ICELAND CITY, và đừng quên mang áo ấm.</p>
+
+      <div class="connect__box">
+        <code id="connectString">connect play.icelandcity.example</code>
+        <button class="btn btn--primary" id="copyBtn" type="button">Sao chép</button>
+      </div>
+      <p class="connect__hint">IP hiển thị là giữ chỗ — cập nhật IP chính thức tại kênh #server-info trên Discord trước khi mở cửa công khai.</p>
+
+      <div class="connect__discord">
+        <a href="#" class="btn btn--outline connect__discord-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20.3 5.4A18 18 0 0 0 15.7 4l-.3.6a13 13 0 0 1 3.9 1.5 15 15 0 0 0-13 0A13 13 0 0 1 10.2 4.6L9.9 4a18 18 0 0 0-4.6 1.4C3 8.7 2.3 12 2.6 15.2a17 17 0 0 0 5 2.6l.7-1.1a11 11 0 0 1-1.8-.9l.4-.3a13 13 0 0 0 10.2 0l.4.3a11 11 0 0 1-1.8.9l.7 1.1a17 17 0 0 0 5-2.6c.4-3.6-.6-6.9-2.1-9.8ZM9.3 13.6c-.8 0-1.4-.7-1.4-1.6s.6-1.6 1.4-1.6 1.4.7 1.4 1.6-.6 1.6-1.4 1.6Zm5.4 0c-.8 0-1.4-.7-1.4-1.6s.6-1.6 1.4-1.6 1.4.7 1.4 1.6-.6 1.6-1.4 1.6Z"/></svg>
+          Tham gia Discord cộng đồng
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo.png" alt="ICELAND CITY" class="footer__logo">
+      <p>ICELAND CITY là máy chủ roleplay do người chơi tự vận hành, không thu phí ẩn cho lợi thế cạnh tranh.</p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h4>Thành phố</h4>
+        <a href="#story">Cốt truyện</a>
+        <a href="#features">Tính năng</a>
+        <a href="#rules">Quy định</a>
+      </div>
+      <div>
+        <h4>Kết nối</h4>
+        <a href="#connect">Vào máy chủ</a>
+        <a href="#">Discord</a>
+        <a href="#">Kênh phát trực tiếp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__legal">
+    <p>ICELAND CITY là dự án cộng đồng phi lợi nhuận, không liên kết hay được xác nhận bởi Rockstar Games hay Take-Two Interactive. Grand Theft Auto V và FiveM là thương hiệu của các đơn vị sở hữu tương ứng.</p>
+    <p>© 2026 ICELAND CITY. Được dựng thủ công trên nền băng ảo.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
