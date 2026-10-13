@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102c35">
+    <meta name="description" content="Cá mập Con City — một thành phố mới, một hành trình mới. Cùng đếm ngược đến 19:00 ngày 31/12/2026, giờ Việt Nam.">
+    <title>Cá mập Con City — Hẹn gặp bạn ngày ra mắt</title>
+    <link rel="icon" href="assets/shark.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Cá mập Con City — trang chủ">
+        <span class="brand-icon"><img src="assets/shark.svg" alt="" width="40" height="40"></span>
+        <span>CÁ MẬP CON<span class="brand-city">CITY</span></span>
+      </a>
+      <nav aria-label="Điều hướng chính">
+        <a href="#hanh-trinh">Hành trình</a>
+        <a href="#dem-nguoc">Ngày ra mắt</a>
+      </nav>
+      <div class="header-actions">
+        <span class="header-status"><span class="status-dot"></span> Đang chuẩn bị ra mắt</span>
+        <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" title="Tạm dừng hiệu ứng" hidden>
+          <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg>
+          <span class="sr-only" id="motion-label">Tạm dừng hiệu ứng</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <div class="eyebrow"><span class="tiny-wave">≈</span> MỘT THÀNH PHỐ MỚI ĐANG ĐẾN</div>
+          <h1 id="hero-title">Nhỏ mà có võ.<br>Vui <span class="title-accent">cả thành phố.<svg viewBox="0 0 440 20" aria-hidden="true"><path d="M4 13 Q180 -1 435 9 M16 18 Q210 6 411 14"/></svg></span></h1>
+          <p class="hero-description">Chào mừng đến với <strong>Cá mập Con City.</strong><br>Một nơi mới để gặp gỡ, khám phá và viết nên những câu chuyện của riêng bạn. Sẵn sàng lên đường chưa?</p>
+          <a class="button button-primary" href="#hanh-trinh">Khám phá hành trình <span aria-hidden="true">↗</span></a>
+          <div class="countdown-section" id="dem-nguoc">
+            <div class="countdown-heading"><span class="status-dot"></span><h2 id="countdown-title">Hẹn gặp bạn sau</h2><span class="countdown-line"></span></div>
+            <div class="countdown" role="timer" aria-label="Thời gian còn lại đến ngày ra mắt" aria-live="off">
+              <div class="time-block"><span id="days">--</span><span class="time-label">NGÀY</span></div>
+              <span class="time-divider" aria-hidden="true">:</span>
+              <div class="time-block"><span id="hours">--</span><span class="time-label">GIỜ</span></div>
+              <span class="time-divider" aria-hidden="true">:</span>
+              <div class="time-block"><span id="minutes">--</span><span class="time-label">PHÚT</span></div>
+              <span class="time-divider" aria-hidden="true">:</span>
+              <div class="time-block"><span id="seconds">--</span><span class="time-label">GIÂY</span></div>
+            </div>
+            <p class="launch-date"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="15" rx="3"/><path d="M8 3v6m8-6v6M4 12h16"/></svg><time datetime="2026-12-31T19:00:00+07:00">31.12.2026 · 19:00</time><span>Giờ Việt Nam (UTC+7)</span></p>
+            <noscript><p class="no-script">Bật JavaScript để xem đồng hồ đếm ngược trực tiếp. Ngày ra mắt: 31/12/2026 lúc 19:00, giờ Việt Nam.</p></noscript>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Minh họa cá mập con và thành phố bên biển" role="img">
+          <div class="sea-bubbles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <span class="art-coordinate">10° N / 106° E<br>MỘT HÀNH TRÌNH MỚI</span>
+          <span class="floating-star star-one">✦</span><span class="floating-star star-two">✦</span>
+          <div class="art-label"><span class="status-dot"></span> HẸN GẶP TẠI CITY!</div>
+          <svg class="city-art" viewBox="0 0 620 620" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="ocean" x1="310" y1="380" x2="310" y2="610" gradientUnits="userSpaceOnUse"><stop stop-color="#84ddd0"/><stop offset="1" stop-color="#3da99b"/></linearGradient>
+              <linearGradient id="shark" x1="210" y1="190" x2="450" y2="410" gradientUnits="userSpaceOnUse"><stop stop-color="#a4e1df"/><stop offset="1" stop-color="#6ab7b9"/></linearGradient>
+              <pattern id="windows" width="25" height="30" patternUnits="userSpaceOnUse"><rect x="8" y="8" width="8" height="12" rx="1" fill="#faf4dd"/></pattern>
+            </defs>
+            <circle cx="310" cy="312" r="238" fill="#d6ece5"/>
+            <circle cx="462" cy="183" r="41" fill="#efd199"/>
+            <path d="M78 404c84-41 154-15 221-26 97-16 128-23 244 20v92c-73 88-380 91-465-8z" fill="url(#ocean)"/>
+            <path d="M107 458c83 32 128-22 197 0s132 33 206 0M135 486c72 31 114-19 171 0s99 30 167 2" stroke="#b4eee0" stroke-width="3" stroke-linecap="round"/>
+            <path d="M362 284h56v117h-56z" fill="#deaa77"/><path d="M369 294h42v97h-42z" fill="url(#windows)"/>
+            <path d="M418 243h54v158h-54z" fill="#487d7b"/><path d="M425 256h40v133h-40z" fill="url(#windows)"/><path d="M445 214v29" stroke="#487d7b" stroke-width="4"/>
+            <path d="M476 314h39v88h-39z" fill="#e7c89c"/><path d="M483 323h25v67h-25z" fill="url(#windows)"/>
+            <path d="M98 346h45v59H98z" fill="#d1ab89"/><path d="M105 353h31v43h-31z" fill="url(#windows)"/>
+            <path d="M147 308h46v97h-46z" fill="#719a91"/><path d="M154 319h32v76h-32z" fill="url(#windows)"/>
+            <path d="M469 414v-63m0 9c-23-30-43-7-31 5 13 7 31-5 31-5zm1 2c17-34 41-17 30-4-9 10-30 4-30 4z" stroke="#244f49" stroke-width="5" stroke-linecap="round"/>
+            <ellipse cx="280" cy="435" rx="124" ry="19" fill="#286c69" opacity=".17"/>
+            <g class="swimming-shark">
+            <path d="M195 323c-42-17-51-46-57-71-24 15-28 48-11 72-27 2-47 20-51 40 42 9 65 1 85-17l45 31" fill="#79c3c3" stroke="#173b43" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M286 218c-11-46 10-74 33-88 3 41 17 65 39 86" fill="#79c3c3" stroke="#173b43" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M186 306c12-63 62-104 134-104 56 0 114 30 148 83 26 42 12 88-40 115-52 28-137 22-193-2-45-20-61-51-49-92z" fill="url(#shark)" stroke="#173b43" stroke-width="5"/>
+            <path d="M213 350c54-26 124-23 186-4 26 8 43 6 61-3-1 23-17 43-41 55-54 28-137 20-183-1-29-13-47-32-50-49 10 5 18 6 27 2z" fill="#f8f1de"/>
+            <path d="M289 370c-9 30-3 51 17 61 17-19 24-37 25-54" fill="#77bdbd" stroke="#173b43" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <ellipse cx="378" cy="285" rx="10" ry="15" fill="#173b43"/><ellipse cx="381" cy="280" rx="3" ry="4" fill="#fff8e9"/>
+            <path d="M407 318c7 12 22 12 31 0" stroke="#173b43" stroke-width="5" stroke-linecap="round"/>
+            <path d="M324 296l-6 14m-8-17-6 14" stroke="#427d82" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="378" cy="319" rx="14" ry="7" fill="#db9f86" opacity=".7"/>
+            <path d="M242 219c21-10 43-15 60-14" stroke="#c9eeea" stroke-width="7" stroke-linecap="round"/>
+            </g>
+            <path d="M115 181c10-12 20-12 30 0m17 9c9-10 17-10 26 0M392 132c8-10 16-10 24 0" stroke="#5e8e87" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="194" cy="244" r="7" stroke="#faf5e5" stroke-width="3"/><circle cx="174" cy="214" r="4" fill="#faf5e5"/>
+            <path d="M198 523h38m143 0h18m-132 16h66" stroke="#a9dbcd" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="postcard-stamp"><span>MỘT CHÚT TÒ MÒ.</span><strong>MỘT TRỜI NIỀM VUI.</strong><svg viewBox="0 0 70 18" aria-hidden="true"><path d="M1 9q8-14 17 0t17 0t17 0t17 0"/></svg></div>
+          <span class="art-caption">CÁ MẬP NHỎ · ƯỚC MƠ LỚN</span>
+        </div>
+        <div class="sea-waves" aria-hidden="true">
+          <svg class="wave-back" viewBox="0 0 2400 100" preserveAspectRatio="none"><path d="M0 50Q150 0 300 50T600 50T900 50T1200 50T1500 50T1800 50T2100 50T2400 50V100H0Z"/></svg>
+          <svg class="wave-front" viewBox="0 0 2400 100" preserveAspectRatio="none"><path d="M0 60Q150 20 300 60T600 60T900 60T1200 60T1500 60T1800 60T2100 60T2400 60V100H0Z"/></svg>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true"><span>THÀNH PHỐ CỦA CHÚNG MÌNH</span><span>✦</span><span>CÁ MẬP NHỎ, ƯỚC MƠ LỚN</span><span>✦</span><span>HẸN GẶP BẠN 31.12.2026</span><span>✦</span><span>THÀNH PHỐ CỦA CHÚNG MÌNH</span></div>
+
+      <section class="journey" id="hanh-trinh" aria-labelledby="journey-title">
+        <div class="journey-intro" data-reveal>
+          <span class="eyebrow">TỪ Ý TƯỞNG ĐẾN THÀNH PHỐ</span>
+          <h2 id="journey-title">Ba bước nhỏ.<br>Một khởi đầu <em>lớn.</em></h2>
+          <p>Mọi hành trình đều bắt đầu từ bước đầu tiên.<br>Cùng theo dõi chặng đường của Cá mập Con City.</p>
+          <span class="journey-note"><span class="status-dot"></span> Hành trình đang bắt đầu</span>
+        </div>
+        <div class="steps">
+          <article class="step is-open" data-reveal>
+            <h3><button class="step-toggle" id="step-one" aria-expanded="true" aria-controls="detail-one"><span class="step-number">01</span><span class="step-heading"><span class="step-kicker">BƯỚC 1 · KHỞI ĐẦU</span><span>Ươm mầm thành phố</span></span><span class="step-symbol" aria-hidden="true">−</span></button></h3>
+            <div class="step-detail" id="detail-one" role="region" aria-labelledby="step-one"><p>Một cái tên, một ý tưởng và thật nhiều háo hức. Cá mập Con City bắt đầu từ mong muốn tạo nên một nơi để mọi người cùng gặp gỡ và khám phá.</p><span class="step-tag">Nơi câu chuyện bắt đầu</span></div>
+          </article>
+          <article class="step" data-reveal>
+            <h3><button class="step-toggle" id="step-two" aria-expanded="false" aria-controls="detail-two"><span class="step-number">02</span><span class="step-heading"><span class="step-kicker">BƯỚC 2 · CHUẨN BỊ</span><span>Góp nhặt điều thú vị</span></span><span class="step-symbol" aria-hidden="true">+</span></button></h3>
+            <div class="step-detail" id="detail-two" role="region" aria-labelledby="step-two" hidden><p>Từng góc nhỏ của thành phố được chuẩn bị cho ngày gặp bạn. Đây là chặng đường hoàn thiện ý tưởng, chăm chút trải nghiệm và sẵn sàng cho một khởi đầu mới.</p><span class="step-tag">Chăm chút từng chi tiết</span></div>
+          </article>
+          <article class="step" data-reveal>
+            <h3><button class="step-toggle" id="step-three" aria-expanded="false" aria-controls="detail-three"><span class="step-number">03</span><span class="step-heading"><span class="step-kicker">BƯỚC 3 · HẸN GẶP</span><span>Cùng mở cửa City</span></span><span class="step-symbol" aria-hidden="true">+</span></button></h3>
+            <div class="step-detail" id="detail-three" role="region" aria-labelledby="step-three" hidden><p>Hẹn bạn lúc 19:00 ngày 31/12/2026, giờ Việt Nam. Quay lại trang này để cùng chào đón cột mốc ra mắt của Cá mập Con City và bắt đầu câu chuyện của chúng mình.</p><span class="step-tag">31.12.2026 · 19:00 · UTC+7</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="invitation" aria-labelledby="invitation-title" data-reveal>
+        <div><span class="eyebrow">GIỮ MỘT CHỖ TRONG LỊCH CỦA BẠN</span><h2 id="invitation-title">Hẹn nhau ở Cá mập Con City.</h2><p>31 tháng 12, 2026 · 19:00 · Giờ Việt Nam</p></div>
+        <button class="button button-dark" id="calendar-button" type="button">Lưu ngày hẹn <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg></button>
+        <p class="calendar-feedback" id="calendar-feedback" role="status"></p>
+      </section>
+    </main>
+
+    <footer><a class="footer-brand" href="#">CÁ MẬP CON CITY<span>Nhỏ mà có võ.</span></a><p>© 2026 Cá mập Con City</p><a href="#" class="back-top">Về đầu trang <span aria-hidden="true">↑</span></a></footer>
+  </body>
+</html>
